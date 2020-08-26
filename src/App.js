@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import Cart from './components/cart/Cart'
+import Cart from './components/cart/Cart';
+import Routes from './Routes'
 
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
       <button onClick={toggleShow}>
       Carrito de compras
       </button>
+
+      <Routes/>
       
       <Cart 
       onCancel={toggleShow}
