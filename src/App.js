@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import Cart from './components/cart/Cart'
+
 
 function App() {
+
+  let [state, setState] = useState({
+    show: true
+  })
+
+  function toggleShow(){
+    setState({...state, show: !state.show})
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <button onClick={toggleShow}>
+      Carrito de compras
+      </button>
+      
+      <Cart 
+      onCancel={toggleShow}
+      show={state.show}/>
+      
     </div>
   );
 }
